@@ -63,12 +63,17 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+            <div class="col-lg-8 col-lg-offset-2 col-sm-offset-3 col-sm-6">
                 <hr class="section-heading-spacer">
                 <div class="clearfix"></div>
                 <h2 class="">Opening Hours:</h2>
                 <ul class="list-group">
-                    <li class="list-group-item">
+                    <li class="list-group-item extra-lg">
+
+                            Today: <?= \Carbon\Carbon::today()->formatLocalized('%A %d %B'); ;?>
+
+                    </li>
+              <li class="list-group-item">
                        MONDAY - 3PM - 1AM
 
                     </li>
@@ -92,11 +97,6 @@
                     </li>
 
                 </ul>
-            </div>
-            <div class="col-lg-5 col-sm-pull-7  col-sm-5">
-                <p class="extra-lg">
-                    <?= \Carbon\Carbon::today()->formatLocalized('%A %d %B'); ;?>
-                </p>
             </div>
         </div>
 
