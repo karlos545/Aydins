@@ -14,7 +14,8 @@
 
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/sweetalert.css" rel="stylesheet">
-
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/simpletextrotator.css" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -50,19 +51,19 @@
             <div class="col-lg-12">
                 <ul class="list-inline">
                     <li>
-                        <a href="#">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li class="footer-menu-divider">&sdot;</li>
                     <li>
-                        <a href="#about">About</a>
+                        <a href="/menu">Menu</a>
                     </li>
                     <li class="footer-menu-divider">&sdot;</li>
                     <li>
-                        <a href="#services">Services</a>
+                        <a href="/contact">Contact</a>
                     </li>
                     <li class="footer-menu-divider">&sdot;</li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a href="http://karlthefreelancer.co.uk" target="_blank">KarlTheFreelancer.co.uk</a>
                     </li>
                 </ul>
                 <p class="copyright text-muted small">Copyright &copy; karlthefreelancer 2015. All Rights Reserved</p>
@@ -76,6 +77,12 @@
     <script src="/js/sweetalert.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
+
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/creative.js"></script>
+    <script src="js/jquery.simple-text-rotator.min.js"></script>
+
 @if(Session::get('postcode_success'))
 <script>
     swal("Everything's Good", "We can deliver to you!", "success")
@@ -85,8 +92,12 @@
         swal("Uh Oh", "It seems that you live too far away!", "error")
     </script>
 @endif
-
+ <script>
+     $(".rotate .rotate").textrotator({
+         animation: "flipUp",
+         speed: 1750
+     });
+ </script>
 
 </body>
-
 </html>

@@ -4,7 +4,7 @@
                     <a href="#">Edit Sections</a>
                 </li>
                 <li>
-                    <a href="#">Edit Menu</a>
+                    <a href="/category/">Edit Menu</a>
                 </li>
                 <li>
                     <a href="#">Edit Contact</a>

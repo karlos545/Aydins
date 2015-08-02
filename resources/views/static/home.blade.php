@@ -13,15 +13,15 @@
             <div class="col-lg-12">
                 <div class="intro-message">
                     <h1>AYDIN'S EATERY</h1>
-                    <h3>Kebab House, Colwyn Bay</h3>
+                    <h3 class="rotate"><span class="rotate">Kebab, Pizza, Burger</span> House, Colwyn Bay</h3>
                     <hr class="intro-divider">
                     <ul class="list-inline intro-social-buttons">
                         <li>
-                            <a href="#" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-list-alt"></span> <span class="network-name">See Menu</span></a>
+                            <a href="/menu" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-list-alt"></span> <span class="network-name">See Menu</span></a>
                         </li>
 
                         <li>
-                            <a href="#postcode" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-map-marker"></span> <span class="network-name">Postcode Checker</span></a>
+                            <a href="#postcode" data-wow-delay="0.1" class="btn btn-primary btn-lg page-scroll wow"><span class="glyphicon glyphicon-map-marker"></span> <span class="network-name">Postcode Checker</span></a>
                         </li>
                     </ul>
                 </div>

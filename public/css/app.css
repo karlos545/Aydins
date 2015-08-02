@@ -6027,9 +6027,6 @@ body {
   padding: 9px;
   color: #333; }
 
-footer {
-  margin: 50px 0; }
-
 .line-height-1 {
   line-height: 1;
   margin-top: 0; }
@@ -6042,6 +6039,55 @@ footer {
   text-align: center;
   color: #ffffff;
   background-color: #ff3333; }
+
+.slide-image {
+  width: 100%; }
+
+.carousel-holder {
+  margin-bottom: 30px; }
+
+.carousel-control,
+.item {
+  border-radius: 4px; }
+
+.caption {
+  height: 100px;
+  overflow: hidden; }
+
+.caption h4 {
+  white-space: nowrap; }
+
+.thumbnail img {
+  width: 100%; }
+
+.cell-center {
+  display: table-cell !important;
+  vertical-align: middle !important; }
+
+.margin-top-15 {
+  margin-top: 15px; }
+
+.btns {
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  color: #d17581; }
+
+.order-btn {
+  padding-top: 10px; }
+
+.thumbnail {
+  padding: 0; }
+
+.thumbnail .caption-full {
+  padding: 9px;
+  color: #333; }
+
+.categories {
+  font-size: 18px; }
+
+footer {
+  margin: 50px 0; }
 
 /*!
  * Start Bootstrap - Landing Page Bootstrap Theme (http://startbootstrap.com)

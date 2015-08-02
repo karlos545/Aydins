@@ -12,7 +12,7 @@ class CreateUsersContactTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('users_contact', function (Blueprint $table) {
             $table->increments('id');
             $table->string('mobile_number');
             $table->string('landline_number');

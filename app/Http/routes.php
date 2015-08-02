@@ -21,6 +21,11 @@ Route::get('/menu', [
 	'uses' => 'MenuController@index'
 ]);
 
+Route::get('/contact', [
+	'as'   => 'menu',
+	'uses' => 'PagesController@contact'
+]);
+
 Route::get('/', [
 	'as'   => 'home',
 	'uses' => 'PagesController@index'
@@ -31,6 +36,12 @@ Route::post('/check-postcode', [
 	'uses' => 'PagesController@postcode'
 ]);
 
+
+Route::group(['middleware' => 'auth'], function(){
+
+	Route::resource('category', 'CategoriesController');
+
+});
 
 
 // Authentication routes...

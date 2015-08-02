@@ -21,6 +21,15 @@ class PagesController extends Controller {
 
 	}
 
+	public function contact() {
+
+		$title = 'Contact Us';
+
+		return view('static.contact')
+			->with('title', $title);
+
+	}
+
 	public function postcode(Request $request) {
 		$check = new PostcodesRepository();
 		$check->checkPostcode($request->input('postcode'));
