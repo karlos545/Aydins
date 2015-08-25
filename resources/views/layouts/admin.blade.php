@@ -31,11 +31,8 @@
 
  <!-- NAVBAR----------------------------------- -->
 @include('partials._navbar')
-@if(Auth::check())
     @include('partials._navbar_admin')
-@else()
-        @include('partials._navbar_guest')
-@endif
+
  <!-- NAVBAR END----------------------------------- -->
 
 

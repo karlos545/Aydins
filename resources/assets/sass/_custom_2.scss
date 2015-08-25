@@ -1,13 +1,7 @@
-/*!
- * Start Bootstrap - Landing Page Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
 body,
 html {
   width: 100%;
-  height: 100%;
+  height: 100% !important;
 }
 
 body,
@@ -17,7 +11,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: sans-serif;
   font-weight: 700;
 }
 
@@ -31,16 +25,16 @@ h6 {
 }
 
 .intro-header {
-  padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-  padding-bottom: 50px;
+  padding-top: 70px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
   text-align: center;
   margin-top: -20px;
+  padding-bottom: 20px;
   color: #f8f8f8;
   background: url(/img/aydins.jpg) no-repeat center center;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 100%;
+  height: 100% !important;
 }
 
 .intro-message {

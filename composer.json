@@ -9,6 +9,9 @@
         "laravel/framework": "5.1.*",
         "laravelcollective/html": "~5.0"
     },
+
+
+
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
@@ -16,6 +19,10 @@
         "phpspec/phpspec": "~2.1"
     },
     "autoload": {
+        "files": [
+            "app/Repos/products/Item.php",
+            "app/helpers.php"
+        ],
         "classmap": [
             "database"
         ],

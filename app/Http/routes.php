@@ -1,6 +1,7 @@
 <?php
 use App\Http\Requests\Request;
 use App\Repos\PostcodesRepository;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -9,12 +10,14 @@ use App\Repos\PostcodesRepository;
 | Here is where you can register all of the routes for an application.
 | It's a breeze. Simply tell Laravel the URIs it should respond to
 | and give it the controller to call when that URI is requested.
-|
-*/
 
-//Route::get('', function(){
+|*/
 
-//});
+
+Route::get('/', [
+	'as'   => 'home',
+	'uses' => 'PagesController@index'
+]);
 
 Route::get('/menu', [
 	'as'   => 'menu',
@@ -26,20 +29,23 @@ Route::get('/contact', [
 	'uses' => 'PagesController@contact'
 ]);
 
-Route::get('/', [
-	'as'   => 'home',
-	'uses' => 'PagesController@index'
-]);
-
 Route::post('/check-postcode', [
 	'as'   => 'check-postcode',
 	'uses' => 'PagesController@postcode'
 ]);
 
-
 Route::group(['middleware' => 'auth'], function(){
 
-	Route::resource('category', 'CategoriesController');
+	Route::resource('product_map', 'Product_mapController');
+	Route::resource('categories', 'CategoriesController');
+	Route::resource('products', 'ProductsController');
+	Route::resource('product_sides', 'Product_sidesController');
+	Route::resource('sides', 'SidesController');
+	Route::resource('sauces', 'SaucesController');
+	Route::resource('salads', 'SaladsController');
+	Route::resource('toppings', 'ToppingsController');
+
+	//Wildcards ----
 
 });
 

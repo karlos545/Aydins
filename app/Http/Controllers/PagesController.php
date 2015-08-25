@@ -37,5 +37,10 @@ class PagesController extends Controller {
 		return redirect('/');
 	}
 
+	public function categories(){
+	    $title = "Edit Menu";
+		return view('categories.index')->with('title', $title);
+	}
+
 
 }

@@ -1,33 +1,28 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h1>Create a Category:</h1>
-                    {!! Form::open(array('route' => 'category.store')) !!}
-                    <div class="input-group input-group-lg">
-                        {!!Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter a Category Name'])!!}
-                        <span class="input-group-btn">
-                            <button class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-plus-sign"></span> Create Category</button>
-                        </span>
-                    </div>
-                    {!! Form::close() !!}
+    <div class="container">
 
-                </div>
+        <h1>Edit Menu</h1>
+        <hr>
 
-            </div>
-
-                @if(session()->has('deleted'))
-                    <div class="alert alert-danger col-sm-6 margin-top-15" role="alert">
-                        <p class="lead">The {{session('deleted')}} category was <strong>Deleted</strong></p>
-                    </div>
-                @endif
-
+        <ul class="nav nav-tabs">
+            <li role="navigation" class="active"><a href="#">Categories</a></li>
+            <li role="navigation"><a href="#">Salads</a></li>
+            <li role="navigation"><a href="#">Sauces</a></li>
+            <li role="navigation"><a href="#">Toppings</a></li>
+        </ul>
         <div class="row">
+            <div class="col-md-6">
+                <h2>Create a Category</h2>
+                @include('/partials._forms.categories')
+            </div>
             <div class="col-xs-12">
-                <h2>Categories:</h2>
+                @include('errors._form_errors')
+                @if(count($categories) !== 0)
+                <hr>
+                <h2>Existing Categories</h2>
                 <table class="table table-bordered">
                     <thead>
                     <tr class="lead">
@@ -39,7 +34,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @if(count($categories) !== 0)
+
                         @foreach($categories as $category)
                             <tr>
                                 <td class="cell-center lead">
@@ -52,59 +47,50 @@
                                     @endif
                                 </td>
                                 <td>
-                                    {!! Form::open(['route' => ['category.destroy', $category->id], 'method' => 'DELETE']) !!}
+                                    {!! Form::open(['route' => ['categories.show',$category->id], 'method' => 'GET']) !!}
                                     <button class="btn btn-default btn-lg btn-block"><span class="glyphicon glyphicon-th-list"></span> View Category Items</button>
                                     {!! Form::close() !!}
                                 </td>
 
                                 <td>
-                                    {!! Form::open(['route' => ['category.destroy', $category->id], 'method' => 'DELETE']) !!}
+                                    {!! Form::open(['route' => ['products.create', $category->id], 'method' => 'GET']) !!}
+                                    <input type="hidden" name="cat_id" value="{{$category->id}}">
                                     <button class="btn btn-default btn-lg btn-block"><span class="glyphicon glyphicon-plus-sign"></span> Add item to Category</button>
                                     {!! Form::close() !!}
                                 </td>
 
                                 <td>
-                                    {!! Form::open(['route' => ['category.update', $category->id], 'method' => 'PATCH']) !!}
+                                    {!! Form::open(['route' => ['categories.update', $category->id], 'method' => 'PUT']) !!}
                                     <div class="input-group input-group-lg">
                                         {!!Form::text('name', $category->name, ['class' => 'form-control', 'placeholder' => 'Enter a Category Name'])!!}
                                         <span class="input-group-btn">
                                           <button class="btn btn-info btn-lg edit-cat"><span class="glyphicon glyphicon-edit"></span> Edit Name</button>
                                         </span>
                                     </div>
-                                        {!! Form::close() !!}
+                                    {!! Form::close() !!}
                                 </td>
 
                                 <td>
-                                    {!! Form::open(['route' => ['category.destroy', $category->id], 'method' => 'DELETE']) !!}
+                                    {!! Form::open(['route' => ['categories.destroy', $category->id], 'method' => 'DELETE']) !!}
                                     <button class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-warning-sign"></span> Delete</button>
                                     {!! Form::close() !!}
                                 </td>
                             </tr>
                         @endforeach
-                    @else
-                        <tr><h2 class="text-primary">There aren't any categories in the database... Create One :) </h2></tr>
-                    @endif
 
                     </tbody>
+
                 </table>
+                @else
+                    <tr><h2 class="text-primary">There aren't any categories in the database... Create One :) </h2></tr>
+                @endif
+                {!! $categories->render()!!}
             </div>
         </div>
     </div>
 
-        <script>
-            //document.querySelector('td.edit button.edit-cat').onclick = function(){
-            swal({   title: "Change Category Name",
-                text: "Write something interesting:",
-                type: "input",
-                showCancelButton: true,
-                closeOnConfirm: false,
-                animation: "slide-from-top",
-                inputPlaceholder: "Write something" },
-                    function(inputValue){   if (inputValue === false) return false;
-                        if (inputValue === "") {
-                            swal.showInputError("You need to write something!");
-                            return false   }
-                        swal("Nice!", "You wrote: " + inputValue, "success"); });}
-        </script>
-
 @endsection
+
+@section('scripts')
+    @include('partials.flash')
+    @stop
